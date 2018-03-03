@@ -8,9 +8,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
 app.use(cors())
-const acc = "8654b3a2-23d3-4aa5-a671-3f4a8428b090";
-const policy = "45ad73b1-05e2-425e-a55d-714b56a99006";
-const bearer = "Bearer 8654b3a223d34aa5a6713f4a8428b090.cbfdf6e6aeb64aec89c28a0d6c0dfffa.5ffab3d082c82f8317700b91cebfdd07c4ca3802ba1fef05439d8156717b4efce0e52c6ce6c28e3af9c88ac871977d22b21c6a3b87215df1e8667dd20e1af8v1"
+const acc = ""; //Keygen.sh account ID
+const policy = ""; //Keygen.sh Policy ID
+const bearer = "" //Keygen.sh Account Slug
 
 // Use this cors config for production, allowing authorized origins to connect
 
@@ -248,7 +248,7 @@ async function validateLicense(key, machine, res) {
 }
 
 async function retrieveLicense(key) {
-    const response = await fetch(`https://api.keygen.sh/v1/accounts/8654b3a2-23d3-4aa5-a671-3f4a8428b090/licenses/${key}`, {
+    const response = await fetch(`https://api.keygen.sh/v1/accounts/${acc}/licenses/${key}`, {
         method: "GET",
         headers: {
             "Accept": "application/vnd.api+json",

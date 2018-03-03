@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "btoa": "^1.1.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "node-fetch": "^1.7.3"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <form id="register">
+        <label for="first-name">
+            First Name
+        </label>
+        <br>
+        <input value="tomas" type="text" name="first-name" id="first-name">
+        <label for="last-name">
+            Last Name
+        </label>
+        <br>
+        <input value="kilke" type="text" name="last-name" id="last-name">
+        <label for="email">
+            Email
+        </label>
+        <br>
+        <input value="tomas@email.com" type="email" name="email" id="email">
+        <br>
+        <label for="password">
+            Password
+        </label>
+        <br>
+        <input value="tomas2123" type="password" name="password" id="password">
+        <br>
+        <br>
+        <button id="submit" type="submit">
+            Register
+        </button>
+    </form>
+    <script>
+        $(document).on('click', '#submit', function(){
+            var first = $('#first-name').val();
+            var last = $('#last-name').val();
+            var email = $('#email').val();
+            var password = $('#password').val();
+            axios.post('http://localhost:5000/signup', {
+                firstname: first,
+                lastname: last,
+                email: email,
+                password: password,
+            })
+            // .then(function (response) {
+            //     console.log(response);
+            // })
+            // .catch(function (error) {
+            //     console.log(error);
+            // });
+        })
+        
+    </script>
+</body>
+
+</html>
